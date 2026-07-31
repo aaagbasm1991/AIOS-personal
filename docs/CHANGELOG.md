@@ -7,6 +7,7 @@
 ### 新增
 
 - `docs/`：功能總覽（FEATURES.md）與本版本紀錄。
+- FEATURES.md 補記官方 financial-services plugin 清單（financial-analysis、equity-research、earnings-reviewer、market-researcher、model-builder，經 `.claude/settings.json` 自動載入）。
 
 ## [0.2.1] - 2026-07-31
 

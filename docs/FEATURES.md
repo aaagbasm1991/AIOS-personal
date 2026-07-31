@@ -87,6 +87,22 @@
 | `media-use` | 配樂、音效、TTS、去背等媒體素材管理 |
 | `figma` | Figma 設計匯入影片 |
 
+## 官方理財 Plugin（Claude Code 自動載入）
+
+`.claude/settings.json` 已啟用 Anthropic 官方 financial-services 套件，
+開啟 Claude Code 時自動從官方 marketplace 載入（僅 Claude Code；Codex 不適用）：
+
+| Plugin | 功能 |
+|---|---|
+| `financial-analysis` | DCF、LBO、三表模型、可比公司估值、試算表稽核 |
+| `equity-research` | 個股研究報告、投資論點追蹤、晨會筆記、催化劑日曆、選股 |
+| `earnings-reviewer` | 財報季分析：讀 transcript、更新模型、產出財報筆記 |
+| `market-researcher` | 產業／主題研究：市場概覽、競爭格局、交易倍數 |
+| `model-builder` | 從 ticker 直接建 Excel 財務模型 |
+
+> 分析輸出僅供研究參考，不構成投資建議。不需要這些功能的話，
+> 刪除 `.claude/settings.json` 中對應條目即可。
+
 ## 環境依賴（按需安裝）
 
 | 功能 | 依賴 | 時機 |
