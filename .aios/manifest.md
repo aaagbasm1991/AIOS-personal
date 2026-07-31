@@ -5,7 +5,7 @@
 - created: 2026-07-30
 - skills_mode: copy
 - skills_link_type: copy
-- skills_copy_signature: 6e2c1f2fcc3a7fb3d43ab888a7998eb54d82afed887bcbbed238a00857bac0d6
+- skills_copy_signature: 942b72618ea80be1f0e5e28aaac505833da4ad3cccad49e3056232f568c32e9d
 - upgrade_from:
 - upgrade_to:
 - upgrade_status: not-applicable
@@ -28,6 +28,7 @@
 | review-memory | shared skill catalog | installed | portable copy |
 | sync-aios-global | shared skill catalog | installed | portable copy |
 | setup-aios | Albert-Agent/shared-skills | installed | portable copy; 2026-07-31 依使用者要求加入 |
+| install-aios | 本 AIOS 自建 | installed | 從 GitHub 抓取範本、補私人層、訪談、全域整合 |
 
 ## Missing or Optional Skills
 
