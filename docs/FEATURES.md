@@ -102,6 +102,11 @@
 
 > 分析輸出僅供研究參考，不構成投資建議。
 
+另附三個編排型 Agent（`.claude/agents/`，Claude Code 專屬機制）：
+`earnings-reviewer`（財報事件端到端處理，可對持股清單批次執行）、
+`market-researcher`（產業／主題研究打包）、`model-builder`（從 ticker 直接建模）。
+Agent 內引用的 FactSet／CapIQ／Daloopa 等 MCP 數據源需自行申請與連接，未連接時退回公開資料。
+
 ## 環境依賴（按需安裝）
 
 | 功能 | 依賴 | 時機 |

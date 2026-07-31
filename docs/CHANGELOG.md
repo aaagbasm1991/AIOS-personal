@@ -10,6 +10,8 @@
   轉為工具中立的資料夾技能，Claude Code 與 Codex 皆可使用。涵蓋估值建模（DCF／LBO／三表／comps）、
   試算表稽核與清理、投行級簡報 QC、研究報告與日常追蹤。LICENSE 存於 `docs/licenses/`。
 - plugin 內的 `skill-creator` 與既有同名技能衝突，未收錄。
+- 編排型 Agent 3 件（`.claude/agents/`）：`earnings-reviewer`、`market-researcher`、`model-builder`——
+  補回 plugin 的多 agent 批次能力（Claude Code 專屬機制）。
 
 ### 移除
 
