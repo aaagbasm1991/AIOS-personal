@@ -5,7 +5,7 @@
 - created: 2026-07-30
 - skills_mode: copy
 - skills_link_type: copy
-- skills_copy_signature: e91de58e55e11a2eabee5f8e4a05a216b10598f501b4a3d72ff8724abeca0382
+- skills_copy_signature: bd54df2ce52d05de392168507d2851e0a16edd6de177b8ee7fd394236506cf6c
 - upgrade_from:
 - upgrade_to:
 - upgrade_status: not-applicable
@@ -30,6 +30,8 @@
 | setup-aios | Albert-Agent/shared-skills | installed | portable copy; 2026-07-31 依使用者要求加入 |
 | install-aios | 本 AIOS 自建 | installed | 從 GitHub 抓取範本、補私人層、訪談、全域整合 |
 | aios-doctor | 本 AIOS 自建 | installed | 唯讀健檢：雙入口漂移、Skills 簽章、記憶結構、MCP 清單、fresh-session 驗證 |
+| aios-backup | 本 AIOS 自建 | installed | 整套 AIOS（含 private/、對話紀錄）備份到使用者自己的 GitHub 私有 repo；含還原流程 |
+| journal | 本 AIOS 自建 | installed | 每日反思日誌五題引導，寫入 daily/，明日待辦同步 active-context 閉環 |
 | hyperframes | heygen-com/hyperframes (Apache-2.0) | installed | HTML 渲染影片入口（上游完整版，含 LICENSE） |
 | hyperframes-core / -animation / -creative / -cli / -registry / -keyframes | heygen-com/hyperframes (Apache-2.0) | installed | HyperFrames 領域技能 6 件 |
 | product-launch-video / faceless-explainer / pr-to-video / motion-graphics / music-to-video / general-video / embedded-captions / slideshow / remotion-to-hyperframes | heygen-com/hyperframes (Apache-2.0) | installed | HyperFrames 工作流 9 件 |
