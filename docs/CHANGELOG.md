@@ -1,57 +1,36 @@
 # 版本紀錄（Changelog）
 
-格式依 [Keep a Changelog](https://keepachangelog.com/zh-TW/)；安裝版本以 `.aios/version.md` 為準。
+每一版寫的是「你多了什麼可以用」。安裝版本以 `.aios/version.md` 為準。
 
 ## [0.2.4] - 2026-08-01
 
-### 變更
-
-- **理財功能改為雙軌自動選版**：Claude Code 經 `.claude/settings.json` 使用官方 plugin
-  （自動更新），Codex 使用 `skills/` 資料夾版；入口檔（CLAUDE.md §15／AGENTS.md §15）
-  加入路由規則，避免 Claude Code 端重複觸發。恢復 0.2.3 移除的 plugin 綁定。
+- **理財功能自動選版**：用 Claude Code 自動載入官方最新版金融套件，用 Codex
+  走內建版本——不用自己設定，兩邊功能相同、不重複觸發。
 
 ## [0.2.3] - 2026-08-01
 
-### 新增
-
-- **財務分析技能 21 件**：自 Anthropic 官方 financial-services plugin（Apache-2.0）抽出、去重，
-  轉為工具中立的資料夾技能，Claude Code 與 Codex 皆可使用。涵蓋估值建模（DCF／LBO／三表／comps）、
-  試算表稽核與清理、投行級簡報 QC、研究報告與日常追蹤。LICENSE 存於 `docs/licenses/`。
-- plugin 內的 `skill-creator` 與既有同名技能衝突，未收錄。
-- 編排型 Agent 3 件（`.claude/agents/`）：`earnings-reviewer`、`market-researcher`、`model-builder`——
-  補回 plugin 的多 agent 批次能力（Claude Code 專屬機制）。
-
-### 移除
-
-- `.claude/settings.json` 的 plugin 綁定：改由資料夾技能提供相同能力，
-  不再強制 Claude Code 使用者自動安裝 marketplace plugin，也讓 Codex 使用者取得同等功能。
+- **投資理財 21 招**：DCF／LBO 估值、財報分析、同業比較、試算表稽核、
+  投行級簡報 QC、晨會筆記……來自 Anthropic 官方金融套件（Apache-2.0），
+  Claude Code 和 Codex 都能用。
+- **3 個理財編排 Agent**：批次跑財報分析、產業研究打包、建模專員（Claude Code 專屬）。
 
 ## [0.2.2] - 2026-08-01
 
-### 新增
-
-- `docs/`：功能總覽（FEATURES.md）與本版本紀錄。
-- FEATURES.md 補記官方 financial-services plugin 清單（該節於 0.2.3 改寫為雙工具共用技能）。
+- **docs/ 文件區**：功能總覽（FEATURES.md）與本版本紀錄，首頁就能看懂這套在幹嘛。
 
 ## [0.2.1] - 2026-07-31
 
-### 新增
-
-- **技能擴充（12 → 38）**：
-  - `install-aios`：新電腦一鍵安裝——抓取範本、補私人層、訪談、全域整合，完成後接續詢問 Set up。（`d16e30f`、`bcbdc08`）
-  - `hyperframes` 影片套件完整版：入口＋6 領域技能＋9 工作流＋3 輔助（Apache-2.0，含 LICENSE）。clone 後即可出片，不需另外 `npx skills add`。（`e1e33b3`、`d0d7751`）
-  - `video-spec-builder`：分鏡訪談，產出 video-spec.md 交 HyperFrames 渲染（MIT）。（`e1e33b3`）
-  - `cards`：IG／Threads／X 輪播圖卡（ISC；不含 node_modules，首次使用 `npm install`）。（`96d6c75`）
-  - `grilling`＋`grill-me`：計畫烤問模式。（`96d6c75`）
-  - `meeting-notes-reference`：會議記錄結構化＋Breeze-ASR-25 本機轉錄三段式管線（ffmpeg 前處理 → CPU int8 推論 → 術語校正）。術語表為空白範本。（`63942b2`）
-- `setup-aios` 加入技能庫，可在此 AIOS 內直接建立新的 AIOS。
+- **會議錄音 → 會議記錄**：本機語音辨識（台灣國語＋中英夾雜特化）＋
+  術語校正＋PM 級結構化整理，錄音不出你的電腦。
+- **影片製作全家桶（HyperFrames）**：網址→宣傳片、文章→說明片、音樂→卡點片、
+  影片上字幕、logo 動畫……20 個影片技能，clone 完即可出片。
+- **分鏡導演（video-spec-builder）**：拍之前先跟毒舌導演把腳本逼清楚。
+- **IG／Threads 輪播圖卡（cards）**：筆記或網址直接變成可發佈的 PNG。
+- **烤問模式（grilling）**：讓 AI 無情拷問你的計畫找漏洞。
+- **一句話裝機（install-aios）**：新電腦或朋友電腦，一句話裝好整套，
+  裝完自動帶 Set up 訪談認識新主人。
 
 ## [0.2.0] - 2026-07-31
 
-### 新增
-
-- 初始公開發布（`4a7caf7`）：
-  - 共用骨架：雙工具入口（`CLAUDE.md`／`AGENTS.md`）、`.aios/` 設定、`.gitignore`。
-  - 個人 Context 與記憶系統範本（`private/`，不進 Git，由 materializer 於本機生成）。
-  - `knowledge/` Obsidian 相容知識庫。
-  - 預設技能 12 件：brainstorm、docx、pdf、pptx、xlsx、markitdown、obsidian-vault、review-memory、skill-creator、speak-human-tw、sync-aios-global、update-wiki。
+- **初始發布**：雙工具入口（Claude Code＋Codex）、個人 Context 與長期記憶、
+  Obsidian 相容知識庫、12 個基礎技能（文件處理、規劃、知識管理、去 AI 味潤稿）。

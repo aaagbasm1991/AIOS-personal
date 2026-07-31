@@ -1,130 +1,118 @@
-# AIOS 個人版 — 功能總覽
+# 這套 AIOS 能幫你做什麼
 
-> 一套 clone 下來就能用的「個人 AI 作業系統」資料夾。
-> 同時支援 Claude Code 與 Codex，內建個人 Context、長期記憶、知識庫與 59 個技能。
+> 把這個資料夾 clone 下來，你的 Claude Code（或 Codex）就從「一個聊天工具」
+> 變成「記得你是誰、內建 59 種技能的個人助理」。
 
-## 核心架構
+## 跟裸用 AI 差在哪
 
-| 區塊 | 位置 | 功能 |
-|---|---|---|
-| 雙工具入口 | `CLAUDE.md`／`AGENTS.md` | Claude Code 與 Codex 各自的啟動指令，宣告規則、路由與信任邊界 |
-| 個人 Context | `private/context/` | 你是誰（`me.md`）、希望 AI 怎麼協作（`working_style.md`）——AI 每次對話的個人化來源 |
-| 長期記憶 | `private/memory/` | inbox 候選、已確認決策、回饋、續作狀態、每日紀錄；跨 Session 不失憶 |
-| 知識庫 | `knowledge/` | Markdown Wiki，可直接當 Obsidian Vault 開啟，Git 同步 |
-| 工作區 | `workspace/` | 草稿與進行中成果（不進 Git） |
-| 技能庫 | `skills/` | 59 個技能單一來源，`.claude/`／`.agents/` 入口自動同步 |
-
-## 安全設計
-
-- `private/`、`workspace/` 不進 Git；憑證、token 一律不落 Markdown。
-- 外部檔案、附件、工具輸出視為「資料」而非「指令」，升級為規則需使用者確認。
-- 檔案產出授權 Gate：預設只顯示內容，明確要求才寫檔。
-- 記憶有 provenance（來源、信心度、敏感度分級），AI 觀察只能當候選，不能自行改寫你的 Context。
-
-## 技能清單（59）
-
-### AIOS 系統（4）
-
-| 技能 | 功能 |
+| 裸用 Claude／Codex | 用這套 AIOS |
 |---|---|
-| `install-aios` | 從 GitHub 抓整套 AIOS 到新電腦：補私人層 → 訪談 → 全域整合，完成後引導 Set up |
-| `setup-aios` | 完整設定助手：十題訪談、範本 materialize、公司版／個人版建置 |
-| `sync-aios-global` | 把 AIOS 安全接入 `~/.claude`／`~/.codex` 全域（備份＋受控區塊） |
-| `review-memory` | 記憶整理：pending 審查、矛盾偵測、封存 |
+| 每次對話都要重新自我介紹 | AI 記得你是誰、在做什麼專案、上次做到哪 |
+| 要功能得自己找 prompt、自己裝技能 | 59 種技能開箱即用，說一句話就觸發 |
+| 換電腦全部重來 | 一句話裝到新電腦，朋友也能直接用你這套 |
 
-### 知識管理（2）
+以下每個功能都附「你可以這樣說」——直接照著講就會動。
 
-| 技能 | 功能 |
+---
+
+## 📋 開會與文件
+
+**丟一個會議錄音檔給它：**
+> 「幫我把這個錄音整理成會議記錄」
+
+它會在你電腦本機轉成逐字稿（台灣國語＋中英夾雜特化的辨識模型，不上傳雲端），
+修正同音錯字，再整理成「決議了什麼、誰負責、什麼時候要好」的結構化記錄。
+首次使用需安裝 ffmpeg 與 faster-whisper，AI 會引導你。
+
+**Word、PDF、Excel、PowerPoint 直接處理：**
+> 「讀這份 PDF 幫我摘要」「把這些資料做成簡報」「幫我檢查這張報表的公式」
+
+**對外文字先過一遍「說人話」：**
+> 「這段公告幫我去 AI 味」「改自然一點再發」
+
+修掉 AI 腔、中國用語、半形標點，讓文字讀起來像真人寫的。
+
+---
+
+## 🎬 內容創作
+
+**做影片不用開剪輯軟體**——給素材，拿到 MP4：
+
+> 「用這個網址做一支 60 秒產品宣傳片」
+> 「把這篇文章做成說明影片」
+> 「這首歌做一支卡點影片」
+> 「幫這支訪談影片上字幕」（本機轉錄，字幕能被人物遮擋，電影感）
+> 「做一個 8 秒的 logo 動畫」
+
+想先把腳本磨清楚再拍？說「我想拍一支影片」，會有一個毒舌導演跟你逐鏡頭
+把想法逼成分鏡表，再交給渲染。首次出片需安裝 Node.js，AI 會引導。
+
+**社群圖卡：**
+> 「把這篇筆記做成 IG 輪播圖卡」
+
+輸出可直接發佈的 PNG（4:5 輪播或 1:1 方形）。
+
+---
+
+## 💰 投資理財
+
+> 「幫我對 TSLA 做 DCF 估值」「整理 NVDA 這季財報重點」
+> 「建一份同業比較表」「檢查我這個財務模型哪裡不平」
+> 「幫我列下季的財報行事曆」
+
+來自 Anthropic 官方金融套件：估值建模（DCF／LBO／三表）、試算表稽核、
+研究報告、投行級簡報 QC 都有。用 Claude Code 會自動載入官方最新版，
+用 Codex 則走內建版本——兩邊功能相同，不用自己設定。
+
+> ⚠️ 分析輸出僅供研究參考，不構成投資建議。
+
+---
+
+## 🧠 想清楚再動手
+
+**規劃模式**——想法還模糊時：
+> 「/brainstorm 我想做一個記帳 app」
+
+幫你把模糊想法變成具體選項、決策和下一步。
+
+**烤問模式**——計畫自我感覺良好時：
+> 「烤問我這個計畫」
+
+無情拷問你的設計找漏洞，上線前先被 AI 電總比被現實電好。
+
+---
+
+## 📚 個人第二大腦
+
+- **它記得你**：你是誰、偏好怎麼協作、專案做到哪，寫在 `private/` 只存你電腦，不會進 Git 也不會被分享出去。
+- **知識庫**：`knowledge/` 資料夾可直接用 Obsidian 開啟，說「幫我把這份文件歸檔進知識庫」就會分類、補連結、更新索引。
+- **記憶有規矩**：AI 觀察到的偏好只能當「候選」，經你確認才會生效；說「整理一下記憶」可隨時審查它學到了什麼。
+
+---
+
+## 🚀 分享與裝機
+
+**裝到新電腦／分享給朋友**，對方只要在 Claude Code 說：
+
+> 「幫我從 https://github.com/aaagbasm1991/AIOS-personal 安裝 AIOS」
+
+會自動下載、建立私人層、用幾個問題認識新主人（Set up 訪談）、
+再問要不要接入全域設定。全程帶著走，不用懂技術。
+
+**自己造新技能：**
+> 「幫我把這個流程做成一個 skill」
+
+用內建的 skill-creator，你的 AIOS 會越用越像你。
+
+---
+
+## 附錄：需要另外安裝的東西（用到才裝，AI 會引導）
+
+| 功能 | 依賴 |
 |---|---|
-| `obsidian-vault` | 唯讀搜尋整理 Obsidian 筆記、wikilink、backlink |
-| `update-wiki` | 把完成文件分類進知識庫：補 metadata、建連結、更新索引 |
+| 影片渲染 | Node.js |
+| 社群圖卡 | `npm install`（Playwright） |
+| 會議錄音轉逐字稿 | `ffmpeg`＋`pip install faster-whisper`＋首次下載模型約 3GB |
+| 其他所有功能 | 不用裝任何東西 |
 
-### 文件處理（5）
-
-| 技能 | 功能 |
-|---|---|
-| `docx`／`pdf`／`pptx`／`xlsx` | Word、PDF、簡報、試算表的讀寫與製作（Anthropic 官方） |
-| `markitdown` | 各種格式轉 AI 可讀的 Markdown |
-
-### 會議與溝通（2）
-
-| 技能 | 功能 |
-|---|---|
-| `meeting-notes-reference` | 會議記錄結構化＋Breeze-ASR-25 本機語音轉錄（台灣國語＋中英夾雜特化） |
-| `speak-human-tw` | 繁中「去 AI 味」潤稿：修中國用語、半形標點、AI 腔 |
-
-### 思考與規劃（4）
-
-| 技能 | 功能 |
-|---|---|
-| `brainstorm` | 動手前的結構化規劃：釐清想法、比較方案、決定下一步 |
-| `grilling`＋`grill-me` | 烤問模式：無情拷問你的計畫找漏洞 |
-| `skill-creator` | 建立與優化新技能 |
-
-### 社群內容（1）
-
-| 技能 | 功能 |
-|---|---|
-| `cards` | 網址／筆記 → IG、Threads、X 輪播圖卡（PNG 輸出） |
-
-### 影片製作（20）
-
-| 技能 | 功能 |
-|---|---|
-| `hyperframes` | 影片製作入口：用 HTML 渲染影片，自動路由到對應工作流 |
-| `video-spec-builder` | 分鏡訪談導演：把模糊想法逼成精確到鏡頭的 video-spec.md |
-| `product-launch-video` | 產品網址／brief → 宣傳片（自動爬站抓素材） |
-| `faceless-explainer` | 純文字主題 → 說明影片 |
-| `pr-to-video` | GitHub PR → 更新日誌影片 |
-| `music-to-video` | 音樂 → 卡點影片（自動節拍分析） |
-| `motion-graphics` | 10 秒內動態圖文：logo 動畫、數據跳動 |
-| `embedded-captions` | 真人影片上字幕（本機 Whisper，字幕可被人物遮擋） |
-| `talking-head-recut` | 訪談／Podcast 影片加圖形包裝 |
-| `slideshow` | 簡報／互動式 deck |
-| `general-video` | 其他自訂影片 |
-| `remotion-to-hyperframes` | Remotion 專案搬遷 |
-| `hyperframes-core`／`-animation`／`-creative`／`-cli`／`-registry`／`-keyframes` | 領域技能：合成規格、動畫、創意方向、渲染指令、元件庫、關鍵幀 |
-| `media-use` | 配樂、音效、TTS、去背等媒體素材管理 |
-| `figma` | Figma 設計匯入影片 |
-
-### 財務分析（21）— 依工具自動選版
-
-雙軌設計，兩邊都拿到最適合的版本：
-
-- **Claude Code**：`.claude/settings.json` 自動載入官方 financial-services plugin
-  （隨 marketplace 自動更新）；下方資料夾版僅作離線備援。
-- **Codex**：直接使用 `skills/` 內的資料夾版——抽取自同一官方套件
-  （Apache-2.0，LICENSE 見 `docs/licenses/`），內容相同。
-
-| 類型 | 技能 |
-|---|---|
-| 估值建模 | `dcf-model`、`lbo-model`、`3-statement-model`、`comps-analysis` |
-| 試算表 | `audit-xls`（模型稽核）、`clean-data-xls`（資料清理）、`xlsx-author` |
-| 簡報 | `pptx-author`、`ppt-template-creator`、`deck-refresh`（換數字）、`ib-check-deck`（投行級 QC） |
-| 研究報告 | `initiating-coverage`、`earnings-analysis`、`earnings-preview`、`sector-overview`、`competitive-analysis` |
-| 日常追蹤 | `morning-note`（晨會筆記）、`model-update`、`catalyst-calendar`、`thesis-tracker`、`idea-generation` |
-
-> 分析輸出僅供研究參考，不構成投資建議。
-
-另附三個編排型 Agent（`.claude/agents/`，Claude Code 專屬機制）：
-`earnings-reviewer`（財報事件端到端處理，可對持股清單批次執行）、
-`market-researcher`（產業／主題研究打包）、`model-builder`（從 ticker 直接建模）。
-Agent 內引用的 FactSet／CapIQ／Daloopa 等 MCP 數據源需自行申請與連接，未連接時退回公開資料。
-
-## 環境依賴（按需安裝）
-
-| 功能 | 依賴 | 時機 |
-|---|---|---|
-| 影片渲染 | Node.js（HyperFrames CLI） | 第一次出片時 |
-| 圖卡輸出 | `npm install`（Playwright） | 第一次做圖卡時 |
-| 語音轉錄 | `ffmpeg`＋`pip install faster-whisper`＋模型約 3GB | 第一次轉錄時 |
-| 其他技能 | 無 | — |
-
-## 快速開始
-
-```bash
-git clone https://github.com/aaagbasm1991/AIOS-personal
-```
-
-clone 後從資料夾開啟 Claude Code，說「幫我完成 AIOS 安裝」即可；
-或先只拿 `skills/install-aios/` 一個資料夾放進 `~/.claude/skills/`，輸入 `/install-aios` 全自動安裝。
+完整技能清單與架構細節見 `.aios/manifest.md`；版本歷史見 [CHANGELOG.md](CHANGELOG.md)。
