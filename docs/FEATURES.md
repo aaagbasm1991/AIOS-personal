@@ -11,25 +11,26 @@
 還沒安裝？對 Claude Code 說「幫我從 https://github.com/aaagbasm1991/AIOS-personal 安裝 AIOS」即可。
 以下各功能附「可以這樣說」的例句，照著講就會觸發。
 
-## 開會與文件
+## 系統維護
 
 | 技能 | 功能 | 可以這樣說 |
 |---|---|---|
-| `meeting-notes-reference` | 會議錄音在本機轉逐字稿（Breeze-ASR-25，台灣國語＋中英夾雜特化，不上傳雲端），依術語表校正後整理成含決議、負責人、期限的記錄 | 「幫我把這個錄音整理成會議記錄」 |
-| `docx`／`pdf`／`pptx`／`xlsx` | Word、PDF、簡報、試算表的讀寫與製作 | 「讀這份 PDF 幫我摘要」「把這些資料做成簡報」 |
-| `markitdown` | 各種文件格式轉 AI 易讀的 Markdown | 「把這個檔案轉成 markdown」 |
-| `speak-human-tw` | 繁中潤稿：修 AI 腔、中國用語、半形標點 | 「這段公告幫我去 AI 味」 |
-
-## 規劃與檢核
-
-| 技能 | 功能 | 可以這樣說 |
-|---|---|---|
-| `brainstorm` | 想法還模糊時，先釐清選項、決策與下一步 | 「/brainstorm 我想做一個記帳 app」 |
-| `grilling`／`grill-me` | 動手前讓 AI 針對計畫的漏洞逐一提問 | 「烤問我這個計畫」 |
+| `aios-backup` | 整套 AIOS（含記憶與對話紀錄）備份到你自己的 GitHub 私有 repo，可還原到新電腦 | 「幫我備份 AIOS」 |
+| `aios-doctor` | 唯讀健檢：雙入口規則有無漂移、技能三處是否一致、記憶結構、載入驗證 | 「幫我做 AIOS 健檢」 |
+| `aios-guide` | 顯示本功能總覽與版本紀錄；Set up 完成後自動向新使用者展示 | 「AIOS 能做什麼」 |
+| `install-aios` | 在新電腦自動下載整套、建立私人層、訪談建立個人 Context | 「幫我從 GitHub 安裝 AIOS」 |
+| `setup-aios` | 完整設定助手：訪談、範本生成、升級 | 「幫我升級 AIOS」 |
+| `sync-aios-global` | 把 AIOS 安全接入 `~/.claude`／`~/.codex` 全域（先備份） | 「把 AIOS 同步到全域」 |
 
 ## 記憶系統與知識庫
 
-AIOS 的記憶不是黑箱——全部是你電腦上看得到的 Markdown 檔：
+記憶是這套系統和「裸用 AI」最大的差別，對你的實際好處：
+
+- **不用重複自我介紹**：你的背景、偏好、講話習慣，說一次就記住，每次對話自動生效。
+- **工作不斷線**：今天做到哪、下一步是什麼，明天開新對話 AI 直接接著做。
+- **糾正一次就夠**：你糾正過的錯誤會被記下來，不會重蹈覆轍。
+- **越用越像你**：日積月累後，AI 給的東西越來越接近你要的格式和判斷。
+- **資料在你手上**：記憶不是黑箱——全部是你電腦上看得到的 Markdown 檔，只存本機、不上雲：
 
 | 檔案 | 放什麼 | 誰能寫入 |
 |---|---|---|
@@ -53,6 +54,22 @@ AIOS 的記憶不是黑箱——全部是你電腦上看得到的 Markdown 檔�
 | `obsidian-vault` | 唯讀搜尋整理 Obsidian 筆記與連結 | 「從我的筆記找出關於 X 的內容」 |
 
 `knowledge/` 資料夾可直接用 Obsidian 開啟。
+
+## 開會與文件
+
+| 技能 | 功能 | 可以這樣說 |
+|---|---|---|
+| `meeting-notes-reference` | 會議錄音在本機轉逐字稿（Breeze-ASR-25，台灣國語＋中英夾雜特化，不上傳雲端），依術語表校正後整理成含決議、負責人、期限的記錄 | 「幫我把這個錄音整理成會議記錄」 |
+| `docx`／`pdf`／`pptx`／`xlsx` | Word、PDF、簡報、試算表的讀寫與製作 | 「讀這份 PDF 幫我摘要」「把這些資料做成簡報」 |
+| `markitdown` | 各種文件格式轉 AI 易讀的 Markdown | 「把這個檔案轉成 markdown」 |
+| `speak-human-tw` | 繁中潤稿：修 AI 腔、中國用語、半形標點 | 「這段公告幫我去 AI 味」 |
+
+## 規劃與檢核
+
+| 技能 | 功能 | 可以這樣說 |
+|---|---|---|
+| `brainstorm` | 想法還模糊時，先釐清選項、決策與下一步 | 「/brainstorm 我想做一個記帳 app」 |
+| `grilling`／`grill-me` | 動手前讓 AI 針對計畫的漏洞逐一提問 | 「烤問我這個計畫」 |
 
 ## 內容創作
 
@@ -89,17 +106,6 @@ Claude Code 載入官方 plugin（隨 marketplace 更新），Codex 使用內建
 | `xlsx-author`／`pptx-author`／`deck-refresh`／`ib-check-deck`／`ppt-template-creator` | Excel／簡報產出、換數字、投行級簡報 QC | 「幫我 QC 這份 pitch deck」 |
 
 > 分析輸出僅供研究參考，不構成投資建議。
-
-## 系統維護
-
-| 技能 | 功能 | 可以這樣說 |
-|---|---|---|
-| `aios-backup` | 整套 AIOS（含記憶與對話紀錄）備份到你自己的 GitHub 私有 repo，可還原到新電腦 | 「幫我備份 AIOS」 |
-| `aios-doctor` | 唯讀健檢：雙入口規則有無漂移、技能三處是否一致、記憶結構、載入驗證 | 「幫我做 AIOS 健檢」 |
-| `aios-guide` | 顯示本功能總覽與版本紀錄；Set up 完成後自動向新使用者展示 | 「AIOS 能做什麼」 |
-| `install-aios` | 在新電腦自動下載整套、建立私人層、訪談建立個人 Context | 「幫我從 GitHub 安裝 AIOS」 |
-| `setup-aios` | 完整設定助手：訪談、範本生成、升級 | 「幫我升級 AIOS」 |
-| `sync-aios-global` | 把 AIOS 安全接入 `~/.claude`／`~/.codex` 全域（先備份） | 「把 AIOS 同步到全域」 |
 
 ## 環境依賴（用到才需安裝，AI 會引導）
 
