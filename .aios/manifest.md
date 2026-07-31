@@ -5,7 +5,7 @@
 - created: 2026-07-30
 - skills_mode: copy
 - skills_link_type: copy
-- skills_copy_signature: 5cec4b4280eda7a5e90150532cca3813690abc5e7c264997fd608b8e5021d700
+- skills_copy_signature: ec726281a3cf4667ab8044350dec1cb7c3f558f1d4785f2aade7f54876e88058
 - upgrade_from:
 - upgrade_to:
 - upgrade_status: not-applicable
@@ -33,6 +33,8 @@
 | hyperframes-core / -animation / -creative / -cli / -registry / -keyframes | heygen-com/hyperframes (Apache-2.0) | installed | HyperFrames 領域技能 6 件 |
 | product-launch-video / faceless-explainer / pr-to-video / motion-graphics / music-to-video / general-video / embedded-captions / slideshow / remotion-to-hyperframes | heygen-com/hyperframes (Apache-2.0) | installed | HyperFrames 工作流 9 件 |
 | media-use / talking-head-recut / figma | heygen-com/hyperframes (Apache-2.0) | installed | HyperFrames 輔助技能 3 件 |
+| cards | shared skill catalog (ISC) | installed | IG／Threads／X 輪播圖卡；已排除 node_modules 與 output，首次使用需 npm install |
+| grilling / grill-me | shared skill catalog | installed | 計畫烤問——無情拷問設計找漏洞 |
 | video-spec-builder | feicaiclub (MIT) | installed | 蘇格拉底式分鏡訪談，產出 video-spec.md 交 hyperframes 渲染 |
 
 ## Missing or Optional Skills
