@@ -178,3 +178,7 @@ Session 結束時依記憶系統自身流程維護以下狀態；沒有實質變
 ## 14. Claude Code Skills
 
 實體 Skills 位於 `skills/`，Claude Code 專案入口為 `.claude/skills/`；預設連結到 `../skills`（即 `<aios-root>/skills`），若主機無法建立連結則使用實體副本，實際模式以 `.aios/manifest.md` 為準。每個 Skill 必須包含 `SKILL.md`。MCP、plugin、connector、auth 與 session 保持 Claude 專屬，不與 Codex 設定檔直接共用。
+
+## 15. 理財技能路由
+
+`.claude/settings.json` 已啟用官方 financial-services plugin。財務分析任務（估值建模、試算表稽核、研究報告、財報分析等）**優先使用 plugin 命名空間版本**（如 `financial-analysis:dcf-model`、`equity-research:earnings-analysis`）——它們隨官方 marketplace 自動更新。`skills/` 內的同名資料夾版（`dcf-model` 等 21 件）是給 Codex 的對等能力，Claude Code 僅在 plugin 未載入（離線、marketplace 不可用）時才退用資料夾版，不要兩者同時觸發。

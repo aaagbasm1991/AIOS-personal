@@ -2,6 +2,14 @@
 
 格式依 [Keep a Changelog](https://keepachangelog.com/zh-TW/)；安裝版本以 `.aios/version.md` 為準。
 
+## [0.2.4] - 2026-08-01
+
+### 變更
+
+- **理財功能改為雙軌自動選版**：Claude Code 經 `.claude/settings.json` 使用官方 plugin
+  （自動更新），Codex 使用 `skills/` 資料夾版；入口檔（CLAUDE.md §15／AGENTS.md §15）
+  加入路由規則，避免 Claude Code 端重複觸發。恢復 0.2.3 移除的 plugin 綁定。
+
 ## [0.2.3] - 2026-08-01
 
 ### 新增

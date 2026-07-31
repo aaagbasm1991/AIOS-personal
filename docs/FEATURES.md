@@ -87,10 +87,14 @@
 | `media-use` | 配樂、音效、TTS、去背等媒體素材管理 |
 | `figma` | Figma 設計匯入影片 |
 
-### 財務分析（21）— Claude Code 與 Codex 皆可用
+### 財務分析（21）— 依工具自動選版
 
-抽取自 Anthropic 官方 financial-services 套件（Apache-2.0，LICENSE 見 `docs/licenses/`），
-已轉為工具中立的資料夾技能，兩邊工具都能觸發：
+雙軌設計，兩邊都拿到最適合的版本：
+
+- **Claude Code**：`.claude/settings.json` 自動載入官方 financial-services plugin
+  （隨 marketplace 自動更新）；下方資料夾版僅作離線備援。
+- **Codex**：直接使用 `skills/` 內的資料夾版——抽取自同一官方套件
+  （Apache-2.0，LICENSE 見 `docs/licenses/`），內容相同。
 
 | 類型 | 技能 |
 |---|---|

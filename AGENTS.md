@@ -182,3 +182,7 @@ Session 結束時依記憶系統自身流程維護以下狀態；沒有實質變
 ## 14. Codex Skills
 
 實體 Skills 位於 `skills/`，Codex 專案入口為 `.agents/skills/`；預設連結到 `../skills`（即 `<aios-root>/skills`），若主機無法建立連結則使用實體副本，實際模式以 `.aios/manifest.md` 為準。每個 Skill 必須包含 `SKILL.md`。MCP、plugin、connector、auth 與 session 保持 Codex 專屬，不與 Claude 設定檔直接共用。
+
+## 15. 理財技能
+
+財務分析能力（估值建模、試算表稽核、研究報告、財報分析等 21 件）由 `skills/` 內的資料夾技能提供（`dcf-model`、`comps-analysis`、`audit-xls` 等），抽取自 Anthropic 官方 financial-services 套件（Apache-2.0），Codex 直接使用。`.claude/settings.json` 的 plugin 設定是 Claude Code 專用的同功能來源，與 Codex 無關。
