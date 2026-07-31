@@ -1,7 +1,7 @@
 # AIOS Manifest
 
 - edition: personal
-- version: 0.2.0
+- version: 0.2.7
 - created: 2026-07-30
 - skills_mode: copy
 - skills_link_type: copy
