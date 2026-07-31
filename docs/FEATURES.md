@@ -17,6 +17,7 @@
 | `install-aios` | 在新電腦自動下載整套、建立私人層、訪談建立個人 Context、詢問是否接入全域 | 「幫我從 GitHub 安裝 AIOS」 |
 | `setup-aios` | 完整設定助手：訪談、範本生成、升級 | 「幫我升級 AIOS」 |
 | `sync-aios-global` | 把 AIOS 安全接入 `~/.claude`／`~/.codex` 全域（先備份） | 「把 AIOS 同步到全域」 |
+| `aios-doctor` | 唯讀健檢：雙入口規則有無漂移、技能三處是否一致、記憶結構、載入驗證 | 「幫我做 AIOS 健檢」 |
 
 ## 開會與文件
 

@@ -107,6 +107,10 @@ python skills/setup-aios/scripts/materialize.py --edition personal --dest <aios-
 - 每個已安裝 Skill 都含 `SKILL.md`。
 - 訪談有進行時：`me.md`、`working_style.md` 無殘留占位符。
 - 有做全域整合時：備份存在、受控區塊完整、區塊外內容未被改動。
+- **Fresh-session 載入驗證**（檔案存在 ≠ 真的有載入）：引導使用者分別開一個
+  全新的 Claude Code／Codex 對話，問「這次載入了哪些規則來源」。任一邊沒
+  提到 AIOS 根入口即為未載入——檢查是否從 AIOS 根目錄開啟、入口檔名是否正確。
+- 完整健檢可隨時執行 `aios-doctor`。
 
 ### 7. 完成回報
 
