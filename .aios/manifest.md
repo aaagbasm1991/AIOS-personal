@@ -5,7 +5,7 @@
 - created: 2026-07-30
 - skills_mode: copy
 - skills_link_type: copy
-- skills_copy_signature: bd54df2ce52d05de392168507d2851e0a16edd6de177b8ee7fd394236506cf6c
+- skills_copy_signature: 9ee84d1b199114ad56d04ba70f002c0d26ed256d50b5e6dce729dd3bce1424ae
 - upgrade_from:
 - upgrade_to:
 - upgrade_status: not-applicable
@@ -32,6 +32,7 @@
 | aios-doctor | 本 AIOS 自建 | installed | 唯讀健檢：雙入口漂移、Skills 簽章、記憶結構、MCP 清單、fresh-session 驗證 |
 | aios-backup | 本 AIOS 自建 | installed | 整套 AIOS（含 private/、對話紀錄）備份到使用者自己的 GitHub 私有 repo；含還原流程 |
 | journal | 本 AIOS 自建 | installed | 每日反思日誌五題引導，寫入 daily/，明日待辦同步 active-context 閉環 |
+| aios-guide | 本 AIOS 自建 | installed | 唯讀顯示功能總覽與版本紀錄；Set up 完成後向新使用者展示 |
 | hyperframes | heygen-com/hyperframes (Apache-2.0) | installed | HTML 渲染影片入口（上游完整版，含 LICENSE） |
 | hyperframes-core / -animation / -creative / -cli / -registry / -keyframes | heygen-com/hyperframes (Apache-2.0) | installed | HyperFrames 領域技能 6 件 |
 | product-launch-video / faceless-explainer / pr-to-video / motion-graphics / music-to-video / general-video / embedded-captions / slideshow / remotion-to-hyperframes | heygen-com/hyperframes (Apache-2.0) | installed | HyperFrames 工作流 9 件 |

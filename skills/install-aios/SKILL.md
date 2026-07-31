@@ -148,6 +148,12 @@ python skills/setup-aios/scripts/materialize.py --edition personal --dest <aios-
 - 第 4 步訪談已完整做完時，改為詢問是否要做尚未完成的其他項目
   （例如先前跳過的全域整合）；全部完成則直接結束，不重複詢問。
 
+### 9. Set up 完成後：展示功能總覽
+
+Set up 訪談完成（或使用者跳過訪談但安裝已完成）後，依 `skills/aios-guide`
+向使用者展示功能總覽與版本紀錄，讓對方知道這套系統能做什麼、每個功能
+怎麼開口。這是安裝流程的最後一步。
+
 ## 既有安裝的更新
 
 目的地已是 AIOS 時不重抓整包：
