@@ -5,7 +5,7 @@
 - created: 2026-07-30
 - skills_mode: copy
 - skills_link_type: copy
-- skills_copy_signature: d86e5590034730e0762ecb0f361c91237d4f8b1256ad0d606ca414d85f3e70b4
+- skills_copy_signature: aae80854eff1f7f472b23ef26636450c2cd90132e900ed54bbd78a700eb1ef31
 - upgrade_from:
 - upgrade_to:
 - upgrade_status: not-applicable
@@ -35,6 +35,7 @@
 | media-use / talking-head-recut / figma | heygen-com/hyperframes (Apache-2.0) | installed | HyperFrames 輔助技能 3 件 |
 | cards | shared skill catalog (ISC) | installed | IG／Threads／X 輪播圖卡；已排除 node_modules 與 output，首次使用需 npm install |
 | grilling / grill-me | shared skill catalog | installed | 計畫烤問——無情拷問設計找漏洞 |
+| meeting-notes-reference | 使用者自製 | installed | 會議記錄結構化＋Breeze-ASR-25 本機轉錄（術語表為空白範本；需 ffmpeg 與 pip install faster-whisper，首次轉錄下載模型約 3GB） |
 | video-spec-builder | feicaiclub (MIT) | installed | 蘇格拉底式分鏡訪談，產出 video-spec.md 交 hyperframes 渲染 |
 
 ## Missing or Optional Skills
