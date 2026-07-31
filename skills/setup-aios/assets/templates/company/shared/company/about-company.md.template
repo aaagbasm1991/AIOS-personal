@@ -1,0 +1,14 @@
+# About Company
+
+- source_ref：
+- owner：
+- confirmed_by：
+- last_verified：
+- revalidation_interval_days：
+
+- 非機密公司簡介：
+- 服務對象：
+- 核心價值：
+- AI 可使用的資料邊界：
+
+本檔是 AIOS 內公司級共用事實、資料邊界與 freshness policy 的唯一核准摘要；`source_ref` 指向外部上游權威來源。`revalidation_interval_days` 是公司共享內容唯一的週期設定，值為正整數；未知時保持空白，所有缺少或無法判定新鮮度的內容視為未確認，使用前重驗。產品或服務的限制只能加嚴本檔邊界，不能放寬。

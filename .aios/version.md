@@ -1,0 +1,4 @@
+# AIOS Version
+
+- version: 0.2.0
+- updated: 2026-07-30

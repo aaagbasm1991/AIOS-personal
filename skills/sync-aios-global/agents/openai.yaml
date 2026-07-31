@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sync AIOS Global"
+  short_description: "Safely connect AIOS to Claude and Codex settings"
+  default_prompt: "Use $sync-aios-global to connect this AIOS to my Claude and Codex global setup."

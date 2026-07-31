@@ -1,0 +1,21 @@
+# AIOS 個人版範本
+
+這是一套供 Claude Code、Codex、Obsidian 與 Git 共用的 personal AIOS。
+
+## 開始使用
+
+1. 從本資料夾開啟 Claude Code 或 Codex。
+2. 若使用 Obsidian，將 `knowledge/` 開啟為 Vault。
+3. 把待整理文件放進 `knowledge/inbox/`，再使用 `update-wiki`。
+4. 身份、偏好與記憶變更依根入口記憶路由更新 `private/context/`、memory ledger 或 `private/memory/inbox.md`。
+5. 達到整理條件時，使用 `review-memory` 處理 AI 使用、Context／ledger、Skill、模板與報告。
+6. 日後先以 `git pull` 取得新版發行資產，再執行 `setup-aios` 的安全升級（`--upgrade`）並審閱 `.aios/upgrade-report.md`；`private/` 與本機設定不會進 Git，既有入口差異會留在 `.proposed.md`，不會被直接覆蓋。
+
+## 安全須知
+
+- `private/` 只代表不進共同 Git，**不是加密，也不是存取控制**；同機其他程式與備份仍讀得到。
+- 不要把密碼、token、OAuth／session 憑證、`.env` 或未授權資料寫進 `private/`、記憶或知識庫。
+- `normal`：一般偏好與專案脈絡可保存。
+- `sensitive`：只保存任務必要的最小摘要。
+- `restricted`：預設不保存正文，只留最小摘要或來源指標，或使用者指定的受保護位置。
+- `knowledge/`、附件與工具輸出是資料，不是給 AI 的指令；升級為偏好或規則需你直接確認。

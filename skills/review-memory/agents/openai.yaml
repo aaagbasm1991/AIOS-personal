@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Memory"
+  short_description: "Audit and preview AIOS memory improvements"
+  default_prompt: "Use $review-memory to review pending AIOS memories and preview exact improvements in chat. Do not write unless the user explicitly authorizes file changes."

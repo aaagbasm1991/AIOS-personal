@@ -1,0 +1,6 @@
+# Products and Services
+
+| 產品／服務 | 摘要 | 專案入口 | 禁止寫入欄位 | source_ref | owner | confirmed_by | last_verified |
+|---|---|---|---|---|---|---|---|
+
+每列限制只能加嚴 `about-company.md` 的公司級資料邊界，不能放寬。

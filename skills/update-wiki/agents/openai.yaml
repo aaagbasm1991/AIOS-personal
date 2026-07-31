@@ -1,0 +1,4 @@
+interface:
+  display_name: "Update Wiki"
+  short_description: "Organize documents into the AIOS knowledge vault"
+  default_prompt: "Use $update-wiki to ingest completed documents into the AIOS knowledge vault."

@@ -1,0 +1,5 @@
+# AIOS Edition
+
+- edition: {{AIOS_EDITION}}
+- owner: {{AIOS_OWNER}}
+- language: {{AIOS_LANGUAGE}}

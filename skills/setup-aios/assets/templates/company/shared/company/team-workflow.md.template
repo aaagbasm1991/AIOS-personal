@@ -1,0 +1,9 @@
+# Team Workflow
+
+| 類型 | 名稱／權威位置 | source_ref | owner | confirmed_by | last_verified |
+|---|---|---|---|---|---|
+| 常用工具 |  |  |  |  |  |
+| 任務位置 |  |  |  |  |  |
+| 文件位置 |  |  |  |  |  |
+
+本檔是 AIOS 內穩定工具與正式位置的唯一索引；外部系統仍由 `source_ref` 指向。團隊協作共識放在 `../team-memory/working-agreements.md`。

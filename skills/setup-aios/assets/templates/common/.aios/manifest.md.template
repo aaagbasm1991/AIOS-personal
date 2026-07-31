@@ -1,0 +1,22 @@
+# AIOS Manifest
+
+- edition: {{AIOS_EDITION}}
+- version: 0.2.0
+- created: {{AIOS_DATE}}
+- skills_mode:
+- skills_link_type:
+- skills_copy_signature:
+- upgrade_from:
+- upgrade_to:
+- upgrade_status: not-applicable
+- unapplied_differences: none
+
+## Installed Skills
+
+| Skill | Source | Status | Notes |
+|---|---|---|---|
+
+## Missing or Optional Skills
+
+| Skill | Reason | Suggested action |
+|---|---|---|

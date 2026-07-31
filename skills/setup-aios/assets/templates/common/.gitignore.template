@@ -1,0 +1,16 @@
+private/
+workspace/
+.aios/local.md
+/.agents/skills
+/.claude/skills
+.env
+.env.*
+**/node_modules/
+**/__pycache__/
+**/*.pyc
+**/output/
+**/*-workspace/
+knowledge/.obsidian/workspace*.json
+knowledge/.obsidian/cache/
+knowledge/.trash/
+knowledge/outputs/
