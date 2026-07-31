@@ -5,7 +5,7 @@
 - created: 2026-07-30
 - skills_mode: copy
 - skills_link_type: copy
-- skills_copy_signature: aae80854eff1f7f472b23ef26636450c2cd90132e900ed54bbd78a700eb1ef31
+- skills_copy_signature: 346ecdd5de94308489aeec227502080acf9113de7545563d83d3431e3203f741
 - upgrade_from:
 - upgrade_to:
 - upgrade_status: not-applicable
@@ -36,6 +36,7 @@
 | cards | shared skill catalog (ISC) | installed | IG／Threads／X 輪播圖卡；已排除 node_modules 與 output，首次使用需 npm install |
 | grilling / grill-me | shared skill catalog | installed | 計畫烤問——無情拷問設計找漏洞 |
 | meeting-notes-reference | 使用者自製 | installed | 會議記錄結構化＋Breeze-ASR-25 本機轉錄（術語表為空白範本；需 ffmpeg 與 pip install faster-whisper，首次轉錄下載模型約 3GB） |
+| 理財技能 21 件：dcf-model / lbo-model / 3-statement-model / comps-analysis / audit-xls / clean-data-xls / xlsx-author / pptx-author / ppt-template-creator / deck-refresh / ib-check-deck / competitive-analysis / earnings-analysis / earnings-preview / model-update / morning-note / catalyst-calendar / idea-generation / initiating-coverage / sector-overview / thesis-tracker | anthropics/financial-services (Apache-2.0) | installed | 自官方 plugin 抽出為雙工具共用資料夾技能；LICENSE 於 docs/licenses/；plugin 的 skill-creator 與既有同名技能衝突未收錄；.claude/settings.json plugin 綁定已移除 |
 | video-spec-builder | feicaiclub (MIT) | installed | 蘇格拉底式分鏡訪談，產出 video-spec.md 交 hyperframes 渲染 |
 
 ## Missing or Optional Skills

@@ -1,7 +1,7 @@
 # AIOS 個人版 — 功能總覽
 
 > 一套 clone 下來就能用的「個人 AI 作業系統」資料夾。
-> 同時支援 Claude Code 與 Codex，內建個人 Context、長期記憶、知識庫與 38 個技能。
+> 同時支援 Claude Code 與 Codex，內建個人 Context、長期記憶、知識庫與 59 個技能。
 
 ## 核心架構
 
@@ -12,7 +12,7 @@
 | 長期記憶 | `private/memory/` | inbox 候選、已確認決策、回饋、續作狀態、每日紀錄；跨 Session 不失憶 |
 | 知識庫 | `knowledge/` | Markdown Wiki，可直接當 Obsidian Vault 開啟，Git 同步 |
 | 工作區 | `workspace/` | 草稿與進行中成果（不進 Git） |
-| 技能庫 | `skills/` | 38 個技能單一來源，`.claude/`／`.agents/` 入口自動同步 |
+| 技能庫 | `skills/` | 59 個技能單一來源，`.claude/`／`.agents/` 入口自動同步 |
 
 ## 安全設計
 
@@ -21,7 +21,7 @@
 - 檔案產出授權 Gate：預設只顯示內容，明確要求才寫檔。
 - 記憶有 provenance（來源、信心度、敏感度分級），AI 觀察只能當候選，不能自行改寫你的 Context。
 
-## 技能清單（38）
+## 技能清單（59）
 
 ### AIOS 系統（4）
 
@@ -87,21 +87,20 @@
 | `media-use` | 配樂、音效、TTS、去背等媒體素材管理 |
 | `figma` | Figma 設計匯入影片 |
 
-## 官方理財 Plugin（Claude Code 自動載入）
+### 財務分析（21）— Claude Code 與 Codex 皆可用
 
-`.claude/settings.json` 已啟用 Anthropic 官方 financial-services 套件，
-開啟 Claude Code 時自動從官方 marketplace 載入（僅 Claude Code；Codex 不適用）：
+抽取自 Anthropic 官方 financial-services 套件（Apache-2.0，LICENSE 見 `docs/licenses/`），
+已轉為工具中立的資料夾技能，兩邊工具都能觸發：
 
-| Plugin | 功能 |
+| 類型 | 技能 |
 |---|---|
-| `financial-analysis` | DCF、LBO、三表模型、可比公司估值、試算表稽核 |
-| `equity-research` | 個股研究報告、投資論點追蹤、晨會筆記、催化劑日曆、選股 |
-| `earnings-reviewer` | 財報季分析：讀 transcript、更新模型、產出財報筆記 |
-| `market-researcher` | 產業／主題研究：市場概覽、競爭格局、交易倍數 |
-| `model-builder` | 從 ticker 直接建 Excel 財務模型 |
+| 估值建模 | `dcf-model`、`lbo-model`、`3-statement-model`、`comps-analysis` |
+| 試算表 | `audit-xls`（模型稽核）、`clean-data-xls`（資料清理）、`xlsx-author` |
+| 簡報 | `pptx-author`、`ppt-template-creator`、`deck-refresh`（換數字）、`ib-check-deck`（投行級 QC） |
+| 研究報告 | `initiating-coverage`、`earnings-analysis`、`earnings-preview`、`sector-overview`、`competitive-analysis` |
+| 日常追蹤 | `morning-note`（晨會筆記）、`model-update`、`catalyst-calendar`、`thesis-tracker`、`idea-generation` |
 
-> 分析輸出僅供研究參考，不構成投資建議。不需要這些功能的話，
-> 刪除 `.claude/settings.json` 中對應條目即可。
+> 分析輸出僅供研究參考，不構成投資建議。
 
 ## 環境依賴（按需安裝）
 

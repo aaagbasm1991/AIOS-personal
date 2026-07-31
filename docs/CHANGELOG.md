@@ -2,12 +2,26 @@
 
 格式依 [Keep a Changelog](https://keepachangelog.com/zh-TW/)；安裝版本以 `.aios/version.md` 為準。
 
+## [0.2.3] - 2026-08-01
+
+### 新增
+
+- **財務分析技能 21 件**：自 Anthropic 官方 financial-services plugin（Apache-2.0）抽出、去重，
+  轉為工具中立的資料夾技能，Claude Code 與 Codex 皆可使用。涵蓋估值建模（DCF／LBO／三表／comps）、
+  試算表稽核與清理、投行級簡報 QC、研究報告與日常追蹤。LICENSE 存於 `docs/licenses/`。
+- plugin 內的 `skill-creator` 與既有同名技能衝突，未收錄。
+
+### 移除
+
+- `.claude/settings.json` 的 plugin 綁定：改由資料夾技能提供相同能力，
+  不再強制 Claude Code 使用者自動安裝 marketplace plugin，也讓 Codex 使用者取得同等功能。
+
 ## [0.2.2] - 2026-08-01
 
 ### 新增
 
 - `docs/`：功能總覽（FEATURES.md）與本版本紀錄。
-- FEATURES.md 補記官方 financial-services plugin 清單（financial-analysis、equity-research、earnings-reviewer、market-researcher、model-builder，經 `.claude/settings.json` 自動載入）。
+- FEATURES.md 補記官方 financial-services plugin 清單（該節於 0.2.3 改寫為雙工具共用技能）。
 
 ## [0.2.1] - 2026-07-31
 
