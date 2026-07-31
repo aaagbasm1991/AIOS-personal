@@ -5,7 +5,7 @@
 - created: 2026-07-30
 - skills_mode: copy
 - skills_link_type: copy
-- skills_copy_signature: 942b72618ea80be1f0e5e28aaac505833da4ad3cccad49e3056232f568c32e9d
+- skills_copy_signature: ba683ccbce75ba7b50564ea29d840cf0cb576ff4562bb47614a7159ce01bfe55
 - upgrade_from:
 - upgrade_to:
 - upgrade_status: not-applicable
@@ -29,6 +29,8 @@
 | sync-aios-global | shared skill catalog | installed | portable copy |
 | setup-aios | Albert-Agent/shared-skills | installed | portable copy; 2026-07-31 依使用者要求加入 |
 | install-aios | 本 AIOS 自建 | installed | 從 GitHub 抓取範本、補私人層、訪談、全域整合 |
+| hyperframes | heygen-com/hyperframes (Apache-2.0) | installed | HTML 渲染影片入口；各工作流需另以 npx skills add 安裝 |
+| video-spec-builder | feicaiclub (MIT) | installed | 蘇格拉底式分鏡訪談，產出 video-spec.md 交 hyperframes 渲染 |
 
 ## Missing or Optional Skills
 
