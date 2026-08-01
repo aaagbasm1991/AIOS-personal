@@ -70,6 +70,10 @@ print('manifest match:', list(sigs.values())[0][:16] in Path('.aios/manifest.md'
 - 每個技能資料夾都含 `SKILL.md`；缺少者列出。
 - 與全域技能（`~/.claude/skills`、`~/.agents/skills`）比對同名：同名不是錯誤，
   但要列出讓使用者知道實際會載入哪一份。
+- **全域接入狀態**：檢查 `~/.claude/skills/` 與 `~/.agents/skills/` 是否含
+  指向本 AIOS 的技能連結（或副本）。都沒有時不算錯誤，但要明確告知：
+  「技能目前只在從 AIOS 資料夾開啟時可用；想在任何資料夾都能用，
+  說『把 AIOS 同步到全域』」。部分接入（數量對不上）則列出缺漏。
 
 ### 4. MCP 與 plugin（僅列名稱）
 

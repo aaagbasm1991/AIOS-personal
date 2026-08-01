@@ -89,6 +89,20 @@ description: 安全盤點並整合目前 AIOS 與使用者既有的 Claude Code�
 - 既有連結指向其他位置時顯示來源與影響，不直接替換。
 - 無法建立連結時才採 copy-mode，並在 manifest 記錄同步責任。
 
+全域層具體作法（這一步是使用者「在任何資料夾都能用技能」的關鍵，不可只做
+第 5 步的指令合併就跳過）：
+
+1. 目標位置：Claude Code 為 `~/.claude/skills/`，Codex 為 `~/.agents/skills/`
+   （`~/.codex/skills/` 僅相容盤點，不作為新安裝目標）。目標資料夾不存在就建立。
+2. 逐一處理根 `skills/` 的每個技能：目標無同名 → 建立指向
+   `<aios-root>/skills/<name>` 的連結（Windows 用 Junction：
+   `cmd /c mklink /J "<目標>" "<來源>"`；macOS／Linux 用相對 Symlink）；
+   有同名 → 跳過並列入報告。
+3. 完成後計數驗證：目標位置的 AIOS 技能連結數 ＝ 根 `skills/` 技能數 −
+   同名保留數；不符即回報缺漏清單。
+4. 提醒使用者：新開的對話才會載入全域技能；建議在 AIOS 資料夾**以外**
+   開一個新對話實測叫得到技能。
+
 私人 Skill 可留在既有全域位置，或存放於 AIOS 的 `private/skills/` 後逐一連結；不得加入團隊 Git。
 
 ### 7. 驗證

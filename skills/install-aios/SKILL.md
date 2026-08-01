@@ -86,18 +86,28 @@ python skills/setup-aios/scripts/materialize.py --edition personal --dest <aios-
 - 使用者想先跳過 → 記錄「訪談未完成」於 `private/memory/active-context.md`，
   之後任何時候可用 `setup-aios` 補做。
 
-### 5. 全域整合（需明確同意）
+### 5. 全域整合（建議執行，需明確同意）
 
-詢問使用者是否要把這套 AIOS 接入這台電腦的全域環境。同意後依
-`skills/sync-aios-global` 的完整流程執行，重點：
+**先把取捨講清楚再問**，不要輕描淡寫帶過：
+
+> 要不要把 AIOS 接入這台電腦的全域環境？
+> - 不整合：技能與規則**只在從 AIOS 資料夾開啟 AI 工具時**生效，
+>   在其他資料夾開啟就什麼都沒有。
+> - 整合（建議）：任何資料夾開啟都能用全部技能。會先備份、
+>   只動受控區塊，可隨時還原。
+
+同意後依 `skills/sync-aios-global` 的**完整流程**執行，重點：
 
 - 先唯讀盤點 `~/.claude`、`~/.codex` 既有指令、Skills 與連結型態。
 - 寫入前備份到 `<aios-root>/private/backups/global-sync/`；備份失敗即停止。
 - 只透過 `AIOS:START`／`AIOS:END` 受控區塊修改全域 `CLAUDE.md`／`AGENTS.md`，
   區塊外的既有內容一律保留。
-- 同名 Skill 保留使用者既有版本，列出差異，不自動覆蓋。
+- **全域 Skills 接入不可省略**：依 sync-aios-global 第 6 節把 AIOS 技能逐一
+  連結到 `~/.claude/skills/` 與 `~/.agents/skills/`（僅補缺少的、同名保留
+  既有版本）。只合併指令區塊、跳過技能連結，視為整合未完成，必須如實回報。
 - 使用者不同意整合時，AIOS 仍可用：直接在 AIOS 根目錄開啟
-  Claude Code 或 Codex 即可，全域整合日後可隨時補做。
+  Claude Code 或 Codex 即可；並明確告知這個限制與日後補做方式
+  （說「把 AIOS 同步到全域」）。
 
 ### 6. 驗證
 
@@ -106,10 +116,14 @@ python skills/setup-aios/scripts/materialize.py --edition personal --dest <aios-
 - `skills/`、`.claude/skills/`、`.agents/skills/` 指向或包含同一批 Skills。
 - 每個已安裝 Skill 都含 `SKILL.md`。
 - 訪談有進行時：`me.md`、`working_style.md` 無殘留占位符。
-- 有做全域整合時：備份存在、受控區塊完整、區塊外內容未被改動。
+- 有做全域整合時：備份存在、受控區塊完整、區塊外內容未被改動；
+  **抽查 `~/.claude/skills/` 與 `~/.agents/skills/` 內 AIOS 技能的連結數量**
+  與根 `skills/` 一致（同名保留者除外），缺漏即回報未完成。
 - **Fresh-session 載入驗證**（檔案存在 ≠ 真的有載入）：引導使用者分別開一個
   全新的 Claude Code／Codex 對話，問「這次載入了哪些規則來源」。任一邊沒
   提到 AIOS 根入口即為未載入——檢查是否從 AIOS 根目錄開啟、入口檔名是否正確。
+  有做全域整合時，額外**在 AIOS 資料夾以外**開一個新對話，確認叫得到
+  AIOS 技能（例如問「你有 aios-guide 嗎」）；叫不到代表全域接入未生效。
 - 完整健檢可隨時執行 `aios-doctor`。
 
 ### 7. 完成回報
